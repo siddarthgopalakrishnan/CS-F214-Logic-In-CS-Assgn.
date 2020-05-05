@@ -1,0 +1,14 @@
+Problem #1.
+This pair of CTL formulas are not equivalent because when we consider a model in which there are 3 states (s0,s1,s2) as given in the code file 'Q1.smv', such that atom 'p' is true in state s0, 'q' is true in s1 and 'r' is true in s2, the formula "EF (q)" will hold whereas the formula "EG (q)" will not hold.
+
+Problem #2.
+This pair of CTL formulas are equivalent. The first part says that there exists a path such that in the future, phi is true or there exists a path such that in the future, psi is true. This statement is the same as saying the there exists a path such that in the future, either phi or psi is true, hence they are equivalent.
+
+First, assume the LHS. Then, without loss of generality, we may assume EF'phi'. This means that there is a future state s(n), reachable from s such that s semantically entails 'phi'. But then s(n) semantically entails EF('phi' or 'psi') follows. 
+Second, we can assume 's' semantically entails EF('phi' or 'psi'). Then there exists a state s(m) reachable from s, such that s(m) semantically entails 'phi' or 'psi'. Without loss of generality, we may assume that s(m) semantically entails 'psi'. But then, we can conclude that 's' semantically entails EF('psi'), as s(m) is reachable from s. Therefore, we also have 's' semantically entails EF('psi') or EF('phi').
+
+Problem #3.
+This pair of CTL formulas are not equivalent. If we assume a model such that there are three states (s0,s1,s2) as given in the code file 'Q3.smv', such that atom 'p' is true in s0, 'q' is true s1 and 'r' is true in s2, the formula "AF (q|r)" will hold whereas the formula "(AF (q) | AF (r))" will not hold.
+
+Problem #4.
+This pair of CTL formulas are not equivalent. If we assume a model such that there are three states (s0,s1,s2) as given in the code file 'Q4.smv', such that atom 'p' is true in s1, 'q' is true s0 and 'r' is true in s2, the formula "EF (!q)" will hold whereas the formula "(!(AF q))" will not hold.

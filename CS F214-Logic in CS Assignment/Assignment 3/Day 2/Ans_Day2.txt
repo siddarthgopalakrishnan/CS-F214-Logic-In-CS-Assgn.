@@ -1,0 +1,21 @@
+Problem #1.
+Yes, there exists a model where all the given set of formulas of S hold.
+Model Filename : Q1.smv
+Model Description: S = s0,s1; //STATES
+		   Atoms = (p,q) //Atoms Present
+		   L = S->P(p,q) //Function from states to power set of atoms
+		   L(s0) = p; L(s1) = q; //Valuations
+		   Transitions = s0->s1 and s1->s1;
+
+Therefore, there exists a path s0->s1->s1->.... in which all the given formulas will hold.
+
+Problem #2.
+Yes, there exists a model where none of the given formulas of S hold.
+Model Filename : Q2.smv
+Model Description: S = s0, s1; //STATES
+		   Atoms = (p, q) //Atom Present
+		   L = S->P(p,q) //Function from states to power set of atoms
+		   L(s0) = p, ~q; L(s1) = p, ~q; //Valuations
+		   Transitions = s0->s1 and s1->s1;
+
+Therefore, there exists a path s0->s1->s1->.... in which none of the given formulas will hold.

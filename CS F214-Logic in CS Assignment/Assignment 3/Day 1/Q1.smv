@@ -1,0 +1,16 @@
+MODULE main
+VAR
+  state : {s0, s1, s2};
+ASSIGN
+  init(state) := s0;
+  next(state) := case
+        state = s0 : {s1, s2};
+        state = s1 : s2;
+        state = s2 : s2;
+        esac;
+DEFINE 
+  p := state = s0;
+  q := state = s1;
+  r := state = s2;
+CTLSPEC
+  EF(q) <-> EG(q)

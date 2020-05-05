@@ -1,0 +1,25 @@
+MODULE main
+VAR
+  p : boolean;
+  q : boolean;
+  state : {s0, s1};
+ASSIGN
+  init(state) := s0;
+  next(state) := case
+	state = s0 : s1;
+	state = s1 : s1;
+	esac;
+  p := case
+	state = s0 : TRUE;
+	state = s1 : TRUE;
+	esac;
+  q := case
+	state = s0 : FALSE;
+	state = s1 : FALSE;
+	esac;
+LTLSPEC
+  F(p) -> F(q);
+CTLSPEC
+  AF(p) -> AF(q);
+CTLSPEC
+  AG(p -> AF(q));
