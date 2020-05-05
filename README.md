@@ -19,4 +19,4 @@ Day 1 - Check if a pair of CTL formulas are equivalent. For those which are not,
 Day 2 - Make a logic model where all the given set of LTL/CTL formulas hold.
         Make a logic model where none of the given LTL/CTL formulas hold.
         
-(ALL CODE WRITTEN IN C)
+(ALL CODE WRITTEN IN C).
